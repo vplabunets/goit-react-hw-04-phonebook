@@ -1,8 +1,10 @@
+import { FormInput, FormLabel } from '../Filter/Filter.styled';
+
 export const Filter = ({ filter, changeFilter }) => {
   return (
-    <label>
-      Filter
-      <input
+    <FormLabel>
+      Find contacts by name
+      <FormInput
         value={filter}
         type="text"
         name="filter"
@@ -10,6 +12,6 @@ export const Filter = ({ filter, changeFilter }) => {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         onChange={changeFilter}
       />
-    </label>
+    </FormLabel>
   );
 };
