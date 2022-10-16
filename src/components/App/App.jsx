@@ -1,6 +1,6 @@
-import { ContactForm } from '../ContactForm/ContactForm';
 import { React, Component } from 'react';
 import { nanoid } from 'nanoid';
+import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactList } from '../ContactList/ContactsList';
 import { Filter } from '../Filter/Filter';
 import { AppWrap, PageTitle, SectionTitle } from './App.styled';
@@ -20,13 +20,14 @@ export class App extends Component {
     const contact = { id: nanoid(), name, number };
     for (const contactCard of this.state.contacts) {
       if (contactCard.name === name) {
-        return alert(`${name} is already contacts`);
+        return alert(`${name} is already contacts.`);
       }
     }
     this.setState(prevState => ({
       contacts: [...prevState.contacts, contact],
     }));
   };
+
   changeFilter = event => this.setState({ filter: event.currentTarget.value });
 
   filterContacts = () => {
@@ -38,7 +39,6 @@ export class App extends Component {
   };
 
   contactCleaner = id => {
-    // console.log(event);
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
@@ -55,7 +55,6 @@ export class App extends Component {
         <Filter changeFilter={this.changeFilter} filter={filter}></Filter>
         <ContactList
           contactCleaner={this.contactCleaner}
-          filter={filter}
           contacts={filteredList}
         ></ContactList>
       </AppWrap>

@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ContactItem } from '../ContactItem/ContactItem';
+import { List } from './ContactList.Styled';
 export const ContactList = ({ contacts, contactCleaner }) => {
   return (
-    <ul>
+    <List>
       {contacts.map(contact => (
         <ContactItem
           contactCleaner={contactCleaner}
@@ -10,6 +12,11 @@ export const ContactList = ({ contacts, contactCleaner }) => {
           contact={contact}
         />
       ))}
-    </ul>
+    </List>
   );
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  contactCleaner: PropTypes.func.isRequired,
 };

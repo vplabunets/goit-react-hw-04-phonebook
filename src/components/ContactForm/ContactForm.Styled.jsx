@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const FormEl = styled.form`
+const FormEl = styled.form`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   align-self: center;
   align-items: center;
 `;
-export const FormWrap = styled.div`
+const FormWrap = styled.div`
   display: flex;
   padding: 20px;
   flex-direction: column;
@@ -19,16 +19,16 @@ export const FormWrap = styled.div`
     margin-bottom: 10px;
   }
 `;
-export const FormLabel = styled.label`
+const FormLabel = styled.label`
   display: flex;
   flex-direction: column;
   align-items: space-between;
   margin-bottom: 10px;
 `;
-export const FormInput = styled.input`
+const FormInput = styled.input`
   display: flex;
 `;
-export const FormButton = styled.button`
+const FormButton = styled.button`
   align-self: center;
   justify-content: center;
   width: 150px;
@@ -39,3 +39,5 @@ export const FormButton = styled.button`
     border-radius: 2px;
   }
 `;
+
+export { FormEl, FormWrap, FormLabel, FormInput, FormButton };

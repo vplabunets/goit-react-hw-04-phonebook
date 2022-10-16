@@ -10,7 +10,6 @@ const Wrapper = styled.li`
 const Button = styled.button`
   align-self: center;
   justify-content: center;
-
   transition: background-color 250ms linear;
   &:hover,
   &:focus {
