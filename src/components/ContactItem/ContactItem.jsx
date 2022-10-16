@@ -1,21 +1,21 @@
 import React from 'react';
-import { ContactButton, ContactItemLi } from './ContactItem.styled';
+import { Wrapper, Button } from './ContactItem.styled';
 
 export const ContactItem = ({ contact, contactCleaner }) => {
   const { name, number } = contact;
 
   return (
-    <ContactItemLi>
+    <Wrapper>
       <span>{name}:</span>
       <span>{number}</span>
-      <ContactButton
+      <Button
         contact={contact.id}
         type="button"
         onClick={() => contactCleaner(contact.id)}
         // onClick={contactCleaner(contact.id)}
       >
         Delete
-      </ContactButton>
-    </ContactItemLi>
+      </Button>
+    </Wrapper>
   );
 };

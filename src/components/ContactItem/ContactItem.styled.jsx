@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const ContactItemLi = styled.li`
+const Wrapper = styled.li`
   display: flex;
   padding: 5px;
   justify-content: space-between;
   &:not(:last-child) {
   }
 `;
-export const ContactButton = styled.button`
+const Button = styled.button`
   align-self: center;
   justify-content: center;
 
@@ -18,3 +18,4 @@ export const ContactButton = styled.button`
     border-radius: 2px;
   }
 `;
+export { Wrapper, Button };
