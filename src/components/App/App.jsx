@@ -4,6 +4,7 @@ import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactList } from '../ContactList/ContactsList';
 import { Filter } from '../Filter/Filter';
 import { AppWrap, PageTitle, SectionTitle } from './App.styled';
+// import axios from 'axios';
 export class App extends Component {
   state = {
     contacts: [
@@ -15,6 +16,15 @@ export class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    if (JSON.parse(localStorage.getItem('contacts'))) {
+      this.setState({
+        contacts: JSON.parse(localStorage.getItem('contacts')),
+      });
+    }
+  }
+
+  console;
   addContacts = contacts => {
     const { name, number } = contacts;
     const contact = { id: nanoid(), name, number };
@@ -27,6 +37,13 @@ export class App extends Component {
       contacts: [...prevState.contacts, contact],
     }));
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state !== prevState) {
+      console.log(this.state);
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
 
   changeFilter = event => this.setState({ filter: event.currentTarget.value });
 
