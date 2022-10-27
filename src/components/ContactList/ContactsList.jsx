@@ -5,7 +5,7 @@ import { List } from './ContactList.Styled';
 export const ContactList = ({ contacts, contactCleaner }) => {
   return (
     <List>
-      {contacts.map(contact => (
+      {contacts().map(contact => (
         <ContactItem
           contactCleaner={contactCleaner}
           key={contact.id}
@@ -17,6 +17,6 @@ export const ContactList = ({ contacts, contactCleaner }) => {
 };
 
 ContactList.propTypes = {
-  contacts: PropTypes.array.isRequired,
+  contacts: PropTypes.func.isRequired,
   contactCleaner: PropTypes.func.isRequired,
 };
