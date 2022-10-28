@@ -12,23 +12,24 @@ export const App = () => {
     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ]);
+  // && JSON.parse(window.localStorage.getItem('contactsData')
   const [filter, setFilter] = useState('');
+
   // localStorage.setItem('contacts', JSON.stringify(contacts))
   //    if (JSON.parse(localStorage.getItem('contacts'))) {
   //     setContacts(JSON.parse(localStorage.getItem('contacts'))
   // }
   useEffect(() => {
     console.log('виконується ефект');
-    //
-    // if (JSON.parse(window.localStorage.getItem('contactsData'))) {
-    //   // console.log('виконується getItem');
-    //   setContacts(JSON.parse(localStorage.getItem('contactsData')));
-    // }
-    // localStorage.setItem('contactsData', JSON.stringify(contacts));
-    // console.log('виконується getItem');
-    // console.log(contacts);
+    // localStorage.setItem('contacts', JSON.stringify(contacts));
+    if (!JSON.parse(localStorage.getItem('contacts'))) {
+      setContacts(JSON.parse(localStorage.getItem('contacts')));
+    }
+
+    window.localStorage.setItem('contactsData', JSON.stringify(contacts));
+
     return;
-  }, []);
+  }, [contacts]);
 
   const addContacts = contact => {
     const { name } = contact;
@@ -58,9 +59,10 @@ export const App = () => {
     console.log(contacts);
     // const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact =>
+    let aaa = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
+    return aaa;
   };
 
   const contactCleaner = id => {
