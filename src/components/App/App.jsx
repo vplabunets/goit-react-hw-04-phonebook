@@ -20,11 +20,11 @@ export const App = () => {
   useEffect(() => {
     console.log('виконується ефект');
     //
-    if (JSON.parse(window.localStorage.getItem('contactsData'))) {
-      // console.log('виконується getItem');
-      setContacts(JSON.parse(localStorage.getItem('contactsData')));
-    }
-    localStorage.setItem('contactsData', JSON.stringify(contacts));
+    // if (JSON.parse(window.localStorage.getItem('contactsData'))) {
+    //   // console.log('виконується getItem');
+    //   setContacts(JSON.parse(localStorage.getItem('contactsData')));
+    // }
+    // localStorage.setItem('contactsData', JSON.stringify(contacts));
     // console.log('виконується getItem');
     // console.log(contacts);
     return;
