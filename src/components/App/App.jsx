@@ -4,7 +4,6 @@ import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactList } from '../ContactList/ContactsList';
 import { Filter } from '../Filter/Filter';
 import { AppWrap, PageTitle, SectionTitle } from './App.styled';
-// import axios from 'axios';
 export const App = () => {
   const [contacts, setContacts] = useState([
     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -12,22 +11,13 @@ export const App = () => {
     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ]);
-  // && JSON.parse(window.localStorage.getItem('contactsData')
   const [filter, setFilter] = useState('');
 
-  // localStorage.setItem('contacts', JSON.stringify(contacts))
-  //    if (JSON.parse(localStorage.getItem('contacts'))) {
-  //     setContacts(JSON.parse(localStorage.getItem('contacts'))
-  // }
   useEffect(() => {
-    console.log('виконується ефект');
-    // localStorage.setItem('contacts', JSON.stringify(contacts));
     if (!JSON.parse(localStorage.getItem('contacts'))) {
       setContacts(JSON.parse(localStorage.getItem('contacts')));
     }
-
     window.localStorage.setItem('contactsData', JSON.stringify(contacts));
-
     return;
   }, [contacts]);
 
@@ -43,21 +33,11 @@ export const App = () => {
       return [...previousState, { id: nanoid(), ...contact }];
     });
   };
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (this.state !== prevState) {
-  //     localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-  //   }
-  // }
-
   const changeFilter = event => {
-    console.log(contacts);
     setFilter(event.currentTarget.value);
   };
 
   const filterContacts = () => {
-    console.log(contacts);
-    // const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
     let aaa = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
@@ -66,7 +46,6 @@ export const App = () => {
   };
 
   const contactCleaner = id => {
-    console.log(contacts);
     setContacts(contacts.filter(contact => contact.id !== id));
   };
 
