@@ -2,10 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import phonedata from '../constants/phonedata.json';
 
-import {
-  getlocalStorage,
-  setLocalStorage,
-} from '/projects/react/goit-react-hw-04-phonebook/src/utils/localStorage';
+import { getlocalStorage, setLocalStorage } from '../utils/localStorage';
 import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactList } from '../ContactList/ContactsList';
 import { Filter } from '../Filter/Filter';
