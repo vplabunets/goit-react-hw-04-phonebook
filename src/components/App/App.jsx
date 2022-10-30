@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
-import phonedata from '/projects/react/goit-react-hw-04-phonebook/src/constants/phonedata.json';
+import phonedata from '../constants/phonedata.json';
+
 import {
   getlocalStorage,
   setLocalStorage,
