@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { ContactItem } from '../ContactItem/ContactItem';
 import { List } from './ContactList.Styled';
 export const ContactList = ({ contacts, contactCleaner }) => {
-  console.log(contacts());
   return (
     <List>
       {contacts().map(contact => (
