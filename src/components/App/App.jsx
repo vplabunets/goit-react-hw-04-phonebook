@@ -5,7 +5,7 @@ import { ContactList } from '../ContactList/ContactsList';
 import {
   getlocalStorage,
   setLocalStorage,
-} from '/projects/react/goit-react-hw-04-phonebook/src/utils/localStorage';
+} from '/projects/react/goit-react-hw-04-phonebook/src/utils/localStorage.js';
 import { Filter } from '../Filter/Filter';
 import phonedata from '/projects/react/goit-react-hw-04-phonebook/src/constants/phonedata.json';
 import { AppWrap, PageTitle, SectionTitle } from './App.styled';
